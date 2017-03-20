@@ -172,3 +172,28 @@ main .down:hover {
     bottom: 20px;
   }
 }
+
+#about {
+  min-height: 100vh;
+  background: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#about h3 {
+  text-align: center;
+  padding-top: 90px;
+}
+
+#about .face {
+  height: 256px;
+  background: url("../img/face.png") no-repeat center center;
+}
+
+#about p {
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 15px;
+}
