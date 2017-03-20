@@ -1,0 +1,73 @@
+@import "../modules/variables"
+
+main
+  background: url('../img/bg.jpg') fixed
+  background-size: cover
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  min-height: 100vh
+
+  h1
+    padding-bottom: 30px
+    font-size: 3em
+
+    span
+      &:before
+        content: ''
+        animation: changeKeyWords infinite 8s
+
+  .start a
+    text-decoration: none
+    padding: 10px 24px
+    color: $font-color-dark
+    border: 2px solid $secondary-color
+    border-radius: 24px
+    transition: 0.3s ease-out
+
+    &:hover
+      border-color: $accent-color
+
+  .down
+    position: absolute
+    left: 50%
+    bottom: 20px
+    padding: 8px
+    transition: 0.5s ease-out
+    box-shadow: -3px 3px 0 0 #ffffff
+    opacity: 0.5
+    transform: rotate(-45deg)
+    animation: moveDown infinite 2s ease-out
+
+    &:hover
+      animation-play-state: paused
+      opacity: 1
+
+@media screen and (max-width: 767px)
+  main
+    h1
+      font-size: 1.5em
+
+@keyframes changeKeyWords
+  0%
+    content: 'I love HTML'
+
+  25%
+    content: 'I love CSS'
+
+  50%
+    content: 'I love insane ideas'
+
+  75%
+    content: 'I love Flex'
+
+  100%
+    content: 'I love reckless design'
+
+@keyframes moveDown
+  0%
+    bottom: 80px
+
+  100%
+    bottom: 20px
