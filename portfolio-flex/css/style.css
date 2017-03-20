@@ -1,0 +1,91 @@
+* {
+  font-family: "Raleway", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: whitesmoke;
+}
+
+nav {
+  position: fixed;
+  width: 100%;
+  text-transform: uppercase;
+  background-color: transparent;
+  z-index: 1;
+  transition: 0.3s ease-out;
+}
+
+nav ul {
+  max-height: 70px;
+  list-style: none;
+  max-width: 1040px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+}
+
+nav ul li {
+  padding: 1em;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: whitesmoke;
+  transition: all .25s;
+}
+
+nav ul li a:hover {
+  color: #00d1b2;
+}
+
+nav ul li.brand {
+  font-size: 24px;
+  color: whitesmoke;
+  flex: 4;
+  text-align: left;
+}
+
+nav ul li.nav-item {
+  font-size: 18px;
+  color: whitesmoke;
+  flex: 1;
+  text-align: center;
+}
+
+@media screen and (max-width: 767px) {
+  nav {
+    transition: all .3s ease;
+    height: 270px;
+  }
+  nav.open {
+    top: 0;
+  }
+  nav.closed {
+    top: -12.5em;
+  }
+  nav ul {
+    flex-direction: column;
+  }
+  nav ul li {
+    width: 100%;
+    padding: .75em;
+    border-bottom: 1px solid #ccc;
+  }
+  nav ul li.brand {
+    flex: 1;
+    text-align: center;
+    transition: all .3s;
+    order: 5;
+    border: none;
+  }
+  nav ul li.brand:hover {
+    color: #00d1b2;
+    cursor: pointer;
+  }
+  nav ul li.nav-item {
+    text-align: left;
+    padding-left: 2em;
+  }
+}

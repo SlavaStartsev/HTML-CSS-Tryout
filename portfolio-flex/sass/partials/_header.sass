@@ -1,0 +1,75 @@
+@import "../modules/variables"
+
+nav
+  position: fixed
+  width: 100%
+  text-transform: uppercase
+  background-color: transparent
+  z-index: 1
+  transition: 0.3s ease-out
+
+  ul
+    max-height: $nav-height
+    list-style: none
+    max-width: 1040px
+    margin: auto
+    display: flex
+    align-items: center
+
+    li
+      padding: 1em
+
+      a
+        text-decoration: none
+        color: $font-color-light
+        transition: all .25s
+
+        &:hover
+          color: $accent-color
+
+      &.brand
+        font-size: 24px
+        color: $font-color-light
+        flex: 4
+        text-align: left
+
+      &.nav-item
+        font-size: 18px
+        color: $font-color-light
+        flex: 1
+        text-align: center
+
+
+@media screen and (max-width: 767px)
+  nav
+    transition: all .3s ease
+    height: $nav-height + 200px
+
+    &.open
+      top: 0
+
+    &.closed
+      top: -12.5em
+
+    ul
+      flex-direction: column
+
+      li
+        width: 100%
+        padding: .75em
+        border-bottom: 1px solid $bg-secondary-color
+
+        &.brand
+          flex: 1
+          text-align: center
+          transition: all .3s
+          order: 5
+          border: none
+
+          &:hover
+            color: $accent-color
+            cursor: pointer
+
+        &.nav-item
+          text-align: left
+          padding-left: 2em
