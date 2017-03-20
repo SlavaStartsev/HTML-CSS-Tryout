@@ -257,3 +257,110 @@ main .down:hover {
     margin: auto;
   }
 }
+
+#contacts {
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+#contacts h3.contacts-header {
+  padding-top: 90px;
+}
+
+#contacts .social {
+  max-width: 1040px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+}
+
+#contacts .social p i {
+  color: #2f2f2f;
+  padding: 20px;
+  font-size: 32pt;
+  transition: 0.3s ease-in;
+}
+
+#contacts .social p .fa-facebook-official:hover {
+  color: #4267b2;
+}
+
+#contacts .social p .fa-twitter:hover {
+  color: #1da1f2;
+}
+
+#contacts .social p .fa-github-square:hover {
+  color: #24292e;
+}
+
+#contacts form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+#contacts form input[type=text] {
+  padding: 5px;
+  border-top: transparent;
+  border-left: transparent;
+  border-right: transparent;
+  border-bottom: 2px solid #ccc;
+  background: whitesmoke;
+}
+
+#contacts form input[type=text]:focus {
+  border-bottom-color: #00d1b2;
+  outline: none;
+}
+
+#contacts form textarea {
+  width: 25em;
+  height: 3em;
+  padding: 5px;
+  border-top: transparent;
+  border-left: transparent;
+  border-right: transparent;
+  border-bottom: 2px solid #ccc;
+  background: whitesmoke;
+  resize: none;
+  overflow: auto;
+}
+
+#contacts form textarea:focus {
+  border-bottom-color: #00d1b2;
+  outline: none;
+}
+
+#contacts form input[type=submit] {
+  padding: 5px 15px;
+  background: whitesmoke;
+  border: 2px solid #2f2f2f;
+  color: #2f2f2f;
+  cursor: pointer;
+  border-radius: 15px;
+  transition: 0.3s ease-out;
+}
+
+#contacts form input[type=submit]:hover {
+  border-color: #00d1b2;
+}
+
+#contacts form input[type=submit]:focus {
+  outline: none;
+}
+
+@media screen and (max-width: 767px) {
+  #contacts form textarea {
+    width: 15em;
+    height: 6em;
+  }
+}
