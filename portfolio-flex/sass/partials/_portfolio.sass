@@ -1,0 +1,51 @@
+@import "../modules/variables"
+
+#portfolio
+  min-height: 100vh
+  background-color: #ccc
+
+  h3
+    text-align: center
+    padding-top: $nav-height + 20px
+
+  .project
+    max-width: 1040px
+    display: flex
+    margin: 0 auto
+
+    .description
+      flex-grow: 7
+      padding: 15px
+
+      h3
+        padding-top: 0
+
+    .preview
+      flex-grow: 5
+      margin: 0 auto
+      padding: 15px
+
+      img
+        max-width: 100%
+
+.separator
+  max-width: 1040px
+  width: auto
+  margin: 0 auto
+  background-color: $accent-color
+  height: 2px
+  border: 0
+
+@media screen and (max-width: 767px)
+  .project
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+
+    .description
+      order: 1
+
+    img
+      padding-top: 15px
+      margin: auto

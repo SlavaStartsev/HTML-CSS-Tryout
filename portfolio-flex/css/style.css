@@ -197,3 +197,63 @@ main .down:hover {
   margin: 0 auto;
   padding: 15px;
 }
+
+#portfolio {
+  min-height: 100vh;
+  background-color: #ccc;
+}
+
+#portfolio h3 {
+  text-align: center;
+  padding-top: 90px;
+}
+
+#portfolio .project {
+  max-width: 1040px;
+  display: flex;
+  margin: 0 auto;
+}
+
+#portfolio .project .description {
+  flex-grow: 7;
+  padding: 15px;
+}
+
+#portfolio .project .description h3 {
+  padding-top: 0;
+}
+
+#portfolio .project .preview {
+  flex-grow: 5;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+#portfolio .project .preview img {
+  max-width: 100%;
+}
+
+.separator {
+  max-width: 1040px;
+  width: auto;
+  margin: 0 auto;
+  background-color: #00d1b2;
+  height: 2px;
+  border: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .project {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .project .description {
+    order: 1;
+  }
+  .project img {
+    padding-top: 15px;
+    margin: auto;
+  }
+}
