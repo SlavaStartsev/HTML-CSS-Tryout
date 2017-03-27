@@ -1,0 +1,191 @@
+header {
+  background-color: #1c242c;
+  position: fixed;
+  width: 100%;
+  z-index: 100; }
+  header ul {
+    height: 30px;
+    list-style: none;
+    max-width: 1300px;
+    margin: auto;
+    display: flex;
+    align-items: center; }
+    header ul li:first-child {
+      flex-grow: 9; }
+    header ul li a {
+      text-decoration: none;
+      padding: 7.5px;
+      color: white;
+      font-size: 0.75em;
+      text-transform: uppercase; }
+      header ul li a:hover {
+        text-decoration: underline; }
+
+nav ul {
+  padding-top: 30px;
+  width: 100%;
+  height: 113px;
+  max-width: 1300px;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  margin: auto; }
+  nav ul li a {
+    text-decoration: none;
+    color: #3b424c; }
+nav #triangles_top {
+  height: 10px;
+  margin-bottom: -10px;
+  position: relative;
+  z-index: 10;
+  background: url("../img/triangle.png") repeat-x; }
+
+#content-wrapper {
+  background-color: #8eb9db; }
+  #content-wrapper ul {
+    height: 105px;
+    max-width: 1300px;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto; }
+    #content-wrapper ul li {
+      text-decoration: none; }
+      #content-wrapper ul li p {
+        font-size: 1.1em; }
+      #content-wrapper ul li span {
+        text-transform: uppercase;
+        font-size: 0.488em; }
+      #content-wrapper ul li input[type="search"] {
+        height: 46px;
+        width: 400px;
+        border-radius: 6px; }
+        #content-wrapper ul li input[type="search"]:hover {
+          border: 2px;
+          color: #7993db; }
+
+#sections-div {
+  background-color: #85a9c7; }
+  #sections-div ul {
+    height: 50px;
+    max-width: 1300px;
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: auto; }
+    #sections-div ul li {
+      text-decoration: none;
+      padding: 13px 15px 17px 15px; }
+      #sections-div ul li a:hover {
+        color: white; }
+      #sections-div ul li .active {
+        background-color: #f2a811; }
+
+.data-container {
+  max-width: 660px;
+  margin: auto;
+  padding-top: 40px; }
+  .data-container h3 {
+    color: #4f5d73; }
+  .data-container p {
+    color: #444;
+    padding: 10px 0; }
+  .data-container button[type=submit] {
+    padding: 5px 15px;
+    background: #62c35d;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: 0.3s ease-out; }
+    .data-container button[type=submit]:hover {
+      background: #4cb96b; }
+    .data-container button[type=submit]:focus {
+      outline: none; }
+
+.info,
+.edit {
+  max-width: 660px;
+  min-width: 504px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto; }
+  .info input[type=text],
+  .info input[type=email],
+  .info select,
+  .edit input[type=text],
+  .edit input[type=email],
+  .edit select {
+    width: 300px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border-radius: 4px;
+    box-sizing: border-box; }
+
+#footer_div {
+  margin-top: 20px;
+  background-color: #1c242c;
+  color: white; }
+  #footer_div #triangles_bottom {
+    height: 10px;
+    top: -10px;
+    position: relative;
+    z-index: 10;
+    background: url("../img/triangle-footer.png") repeat-x; }
+  #footer_div #top {
+    background-color: #1c242c;
+    max-width: 1300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    padding: 20px 0; }
+    #footer_div #top:nth-child(2) {
+      flex-grow: 8; }
+    #footer_div #top #footer_gos {
+      max-width: 60px; }
+    #footer_div #top a {
+      color: gray; }
+  #footer_div #middle {
+    background-color: #20272e; }
+    #footer_div #middle ul {
+      margin: auto;
+      list-style: none;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      max-width: 1300px;
+      height: 50px; }
+      #footer_div #middle ul li {
+        padding-right: 20px; }
+        #footer_div #middle ul li a {
+          text-decoration: none;
+          color: white; }
+  #footer_div #bottom {
+    display: flex;
+    align-items: center;
+    height: 70px;
+    color: gray; }
+
+* {
+  font-family: "Calibri", sans-serif;
+  margin: 0;
+  padding: 0; }
+
+.container {
+  max-width: 1300px;
+  margin: auto; }
+
+.col3 {
+  flex-grow: 3; }
+
+.col9 {
+  flex-grow: 9; }
+
+/*# sourceMappingURL=style.css.map */
