@@ -14,6 +14,7 @@ import gerb from "./img/footer-gerb.png";
 import gos from "./img/gosuslugi.png";
 import ru from "./img/ru.png";
 import komi from "./img/favicon.ico";
+import avatar from "./img/default-user.png";
 
 let headerLinks = [
   {
@@ -56,6 +57,23 @@ let infoLineLinks = {
   details: "Звонок по России бесплатный"
 };
 let sectionLinks = ["Избранные услуги", "Заявки", "Жалобы", "Личные данные", "Документы", "Платежи", "Транспорт", "Личный кабинет пациента"];
+let profileLinks = [
+  {
+    id: "services",
+    description: "Заказано услуг",
+    value: 0
+  },
+  {
+    id: "complaines",
+    description: "Подано жалоб",
+    value: 0
+  },
+  {
+    id: "favorite_services",
+    description: "Избранных услуг",
+    value: 0
+  }
+];
 let footerLinks = {
   gerb: gerb,
   gos: gos,
@@ -72,7 +90,7 @@ ReactDOM.render(
     <HeaderNavigation links={headerNavigationLinks}/>
     <InfoLine links={infoLineLinks}/>
     <Sections links={sectionLinks}/>
-    <PersonalData/>
+    <PersonalData profileLinks={profileLinks} img={avatar}/>
     <Footer links={footerLinks}/>
   </div>,
   document.getElementById('root')

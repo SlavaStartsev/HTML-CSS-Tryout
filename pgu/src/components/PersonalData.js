@@ -1,10 +1,13 @@
 import React, {Component} from "react";
 
 import {ShowData} from "./ShowData";
+import {Profile} from "./Profile";
 
-export default class Data extends Component {
+export default class PersonalData extends Component {
   constructor(props) {
     super(props);
+    this.profileLinks = props.profileLinks;
+    this.img = props.img;
     this.state = {
       editing: false,
       surname: "Старцев",
@@ -40,10 +43,12 @@ export default class Data extends Component {
   }
 
   render() {
+    let profile = <Profile links={this.props.profileLinks} img={this.props.img}/>
     let content;
     if (this.state.editing) {
       content = (
-        <div>
+        <div className="container personal-data">
+          {profile}
           <div className="data-container" id="personal_data">
             <div className="edit">
               <h3>Личные данные</h3>
@@ -160,8 +165,11 @@ export default class Data extends Component {
         </div>);
     } else {
       content = (
+        <div className="container personal-data">
+          {profile}
           <ShowData toggleState={this.toggleState.bind(this)} user={this.state}/>
-        );
+        </div>
+      );
     }
     return (
       <div>

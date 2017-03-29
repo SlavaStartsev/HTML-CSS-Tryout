@@ -133,10 +133,15 @@ nav #triangles_top {
       #sections-div ul .active:hover {
         background-color: #f2a811; }
 
-.data-container {
-  max-width: 660px;
-  margin: auto;
+.personal-data {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin: 0 auto;
   padding-top: 50px; }
+
+.data-container {
+  max-width: 660px; }
   .data-container h3 {
     color: #4f5d73; }
   .data-container p {
@@ -181,6 +186,28 @@ nav #triangles_top {
     border-radius: 4px;
     border: 1px solid gray;
     box-sizing: border-box; }
+
+#profile {
+  width: 280px;
+  height: 330px;
+  background-color: #f3f5f9;
+  margin-right: 40px; }
+  #profile h3,
+  #profile p {
+    padding: 15px 20px; }
+  #profile img {
+    padding: 20px 0 0 20px; }
+  #profile .stats {
+    display: flex;
+    justify-content: space-between; }
+
+button[type=submit] {
+  padding: 15px 65px;
+  border: none;
+  background-color: #bac9e0;
+  border-radius: 3px;
+  font-size: 1.3em;
+  color: white; }
 
 #footer_div {
   margin-top: 20px;
