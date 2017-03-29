@@ -47,7 +47,7 @@ export default class Data extends Component {
           <div className="data-container" id="personal_data">
             <div className="edit">
               <h3>Личные данные</h3>
-              <button type="submit" onClick={this.toggleState.bind(this)}>Назад</button>
+              <button id="btn_back" onClick={this.toggleState.bind(this)}>Назад</button>
             </div>
             <div className="edit" id="gender">
               Пол
@@ -59,7 +59,7 @@ export default class Data extends Component {
             </div>
             <div className="edit" id="date_of_birth">
               Дата рождения
-              <date-util type="date" value={this.state.dateOfBirth}
+              <input type="date" value={this.state.dateOfBirth}
                      onChange={e => this.setState({dateOfBirth: e.target.value})}/>
             </div>
             <div className="edit" id="snils">

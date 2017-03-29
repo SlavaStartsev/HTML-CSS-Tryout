@@ -5,7 +5,7 @@ export const ShowData = (props) =>
     <div className="data-container" id="personal">
       <div className="edit">
         <h3>Личные данные</h3>
-        <button type="submit" onClick={props.toggleState}>Редактировать</button>
+        <button id="btn_edit" onClick={props.toggleState}>Редактировать <i className="fa fa-pencil-square-o"></i></button>
       </div>
       <div className="info"><p>Фамилия</p><p>{props.user.surname}</p></div>
       <div className="info"><p>Имя</p><p>{props.user.name}</p></div>
@@ -40,3 +40,26 @@ export const ShowData = (props) =>
       <div className="info"><p>Электронная почта</p><p>{props.user.email}</p></div>
     </div>
   </div>;
+
+ShowData.propTypes = {
+  snils: React.PropTypes.number,
+  inn: React.PropTypes.number,
+
+  registrationIndex: React.PropTypes.number,
+  registrationRegion: React.PropTypes.string,
+  registrationDistrict: React.PropTypes.string,
+  registrationLocality: React.PropTypes.string,
+  registrationStreet: React.PropTypes.string,
+  registrationHouse: React.PropTypes.number,
+
+  actualIndex: React.PropTypes.number,
+  actualRegion: React.PropTypes.string,
+  actualDistrict: React.PropTypes.string,
+  actualLocality: React.PropTypes.string,
+  actualStreet: React.PropTypes.string,
+  actualHouse: React.PropTypes.number,
+
+  phoneNumber: React.PropTypes.number,
+  mobilePhoneNumber: React.PropTypes.number,
+  email: React.PropTypes.string
+};
