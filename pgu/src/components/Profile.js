@@ -1,7 +1,7 @@
 import React from "react";
 
 export const Profile = (props) => {
-  let createStats = (e, i) => e.map(el => <div key={i} className="stats" id={el.id}><p>{el.description}</p>
+  let createStats = (e) => e.map((el, i) => <div key={i} className="stats" id={el.id}><p>{el.description}</p>
     <p>{el.value}</p></div>);
   return (
     <div>

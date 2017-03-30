@@ -11,7 +11,9 @@ header {
     display: flex;
     align-items: center; }
     header ul li {
-      padding: 5px 5px 5px 10px; }
+      padding: 5px 5px 5px 10px;
+      overflow: hidden;
+      white-space: nowrap; }
       header ul li:first-child {
         flex-grow: 9; }
       header ul li:hover {
@@ -21,7 +23,9 @@ header {
         padding: 7.5px;
         color: white;
         font-size: 0.75em;
-        text-transform: uppercase; }
+        text-transform: uppercase;
+        overflow: hidden;
+        white-space: nowrap; }
       header ul li .fa-eye {
         color: dodgerblue; }
       header ul li .fa-map-marker {
@@ -53,7 +57,11 @@ nav ul {
       display: flex; }
     nav ul li a {
       text-decoration: none;
-      color: #3b424c; }
+      color: #3b424c;
+      overflow: hidden;
+      white-space: nowrap; }
+      nav ul li a:hover {
+        color: #42a5e3; }
 nav #brand_text {
   padding-left: 15px; }
 nav #triangles_top {
@@ -81,11 +89,15 @@ nav #triangles_top {
         color: gray; }
       #content-wrapper ul li p {
         font-size: 1.5em;
-        color: white; }
+        color: white;
+        overflow: hidden;
+        white-space: nowrap; }
       #content-wrapper ul li span {
         text-transform: uppercase;
         font-size: 0.7em;
-        color: white; }
+        color: white;
+        overflow: hidden;
+        white-space: nowrap; }
       #content-wrapper ul li input[type="search"] {
         height: 46px;
         padding: 0 2%;
@@ -108,6 +120,8 @@ nav #triangles_top {
           color: white;
           font-size: 14px;
           margin: 0; }
+        #content-wrapper ul #mobile a:hover {
+          color: #005580; }
 
 #sections-div {
   background-color: #85a9c7; }
@@ -125,7 +139,9 @@ nav #triangles_top {
       #sections-div ul li a {
         text-decoration: none;
         text-align: center;
-        color: white; }
+        color: white;
+        overflow: hidden;
+        white-space: nowrap; }
       #sections-div ul li:hover {
         background-color: #8eb9db; }
     #sections-div ul .active {
@@ -134,6 +150,7 @@ nav #triangles_top {
         background-color: #f2a811; }
 
 .personal-data {
+  max-width: 1300px;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -141,7 +158,8 @@ nav #triangles_top {
   padding-top: 50px; }
 
 .data-container {
-  max-width: 660px; }
+  min-width: 660px;
+  max-width: 504px; }
   .data-container h3 {
     color: #4f5d73; }
   .data-container p {
@@ -166,8 +184,7 @@ nav #triangles_top {
 
 .info,
 .edit {
-  max-width: 660px;
-  min-width: 504px;
+  width: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -202,7 +219,7 @@ nav #triangles_top {
     justify-content: space-between; }
 
 button[type=submit] {
-  padding: 15px 65px;
+  padding: 10px 65px;
   border: none;
   background-color: #bac9e0;
   border-radius: 3px;
@@ -231,18 +248,24 @@ button[type=submit] {
       flex-grow: 9;
       display: flex;
       align-items: center;
-      flex-direction: row; }
+      flex-direction: row;
+      overflow: hidden;
+      white-space: nowrap; }
     #footer_div #top #contacts {
       flex-grow: 3;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      flex-direction: row; }
+      flex-direction: row;
+      overflow: hidden;
+      white-space: nowrap; }
     #footer_div #top #footer_gos {
       max-height: 50px;
       padding-left: 60px; }
     #footer_div #top a {
-      color: gray; }
+      color: gray;
+      overflow: hidden;
+      white-space: nowrap; }
   #footer_div #middle {
     background-color: #20272e; }
     #footer_div #middle ul {
@@ -257,7 +280,9 @@ button[type=submit] {
         padding-right: 20px; }
         #footer_div #middle ul li a {
           text-decoration: none;
-          color: white; }
+          color: white;
+          overflow: hidden;
+          white-space: nowrap; }
   #footer_div #bottom {
     display: flex;
     align-items: center;
