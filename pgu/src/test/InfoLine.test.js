@@ -1,5 +1,6 @@
 import * as React from "react";
 import {expect} from "chai";
+import {describe} from "mocha";
 let assert = require('assert');
 import {Simulate, isElementOfType, renderIntoDocument} from "react-addons-test-utils";
 import {Header} from "../components/Header";
@@ -29,7 +30,7 @@ describe('../components/Header', () => {
       <Header links={links}/>
     );
 
-    expect(header).toExist;
+    expect(header).to.be;
   });
 
   it('Header instance is created properly', () => {
