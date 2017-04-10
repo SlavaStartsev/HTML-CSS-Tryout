@@ -1,15 +1,36 @@
-import React from "react";
+import React, {Component} from "react";
 
+export default class Header extends Component {
+  constructor(props) {
+    super(props);
+    this.links = props.links;
+    this.state = {
+      linksClicked: 0
+    };
+  }
 
-export const Header = (props) => {
-  let createLinks = (e) =>
-    e.map((el, i) => el.text === "flag" ? <li key={i}><img src={el.src} alt={el.text} id={el.id}/></li> : <li key={i}><i className={el.icon}></i><a href="#">{el.text}</a></li>);
+  clicker() {
+    this.setState({linksClicked: this.state.linksClicked + 1})
+  };
 
-  return (
-    <header>
-      <ul className="container">
-        {createLinks(props.links)}
-      </ul>
-    </header>
-  );
-};
+  createLinks(e) {
+    return e.map((el, i) =>
+      <li key={i}>
+        <i className={el.icon}></i>
+        <a href="#" onClick={this.clicker.bind(this)}>
+          <img src={el.src} alt="" id={el.id}/>
+          {el.text}
+        </a>
+      </li>)
+  }
+
+  render() {
+    return (
+      <header>
+        <ul className="container">
+          {this.createLinks(this.links)}
+        </ul>
+      </header>
+    )
+  }
+}

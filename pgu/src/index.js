@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import {Header} from "./components/Header";
+import Header from "./components/Header";
 import {HeaderNavigation} from "./components/HeaderNavigation";
 import {Sections} from "./components/Sections";
 import {InfoLine} from "./components/InfoLine";
@@ -36,12 +36,12 @@ let headerLinks = [
   {
     src: ru,
     id: "ru",
-    text: "flag"
+    text: ""
   },
   {
     src: komi,
     id: "komi",
-    text: "flag"
+    text: ""
   }
 ];
 let headerNavigationLinks = {
