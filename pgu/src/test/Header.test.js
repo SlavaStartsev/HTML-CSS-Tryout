@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import {expect} from "chai";
 import {shallow} from "enzyme";
 import Header from "../components/Header";
@@ -24,7 +24,7 @@ describe('../components/Header', () => {
     }
   ];
 
-  it('should render with props', () => {
+  it('should render with props and no errors', () => {
     const wrapper = shallow(
       <Header links={links}/>
     );
@@ -69,34 +69,42 @@ describe('../components/Header', () => {
 
     wrapper.find('ul').children().forEach((e, i) => {
       expect(e.text()).to.equal(links[i].text);
-      expect(e.find('i').hasClass(links[i].icon)).to.equal(true);
+      expect(e.find('li > i').hasClass(links[i].icon)).to.equal(true);
     });
 
-    // wrapper.find('ul').find('li').find('i').forEach((e, i) => {
-    //   expect(e.hasClass(links[i].icon)).to.equal(true);
-    // });
   });
 
   it('contains all items from props', () => {
     const wrapper = shallow(
       <Header links={links}/>
     );
-    expect(wrapper.find('ul').children()).to.have.length(links.length);
+    expect(wrapper.find('ul').children()).to.have.length.of(links.length);
   });
 
-  it('simulate clicks on links', () => {
-    const wrapper = shallow(
-      <Header links={links}/>
-    );
 
-    let spy = sinon.spy(Header.prototype, 'clicker');
+  context('anchor element', () => {
+    it('simulate clicks on anchor ', () => {
+      let spy = sinon.spy(Header.prototype, 'clicker');
+      const wrapper = shallow(
+        <Header links={links}/>
+      );
 
-    wrapper.find('a').forEach(e => {
-      e.simulate('click');
+      wrapper.find('a').forEach(e => {
+        e.simulate('click');
+      });
+
+      expect(spy.callCount).to.equal(wrapper.find('a').length);
+      expect(wrapper.state('linksClicked')).to.equal(links.length);
     });
 
-    expect(spy).to.have.been.called;
-    expect(wrapper.state('linksClicked')).to.equal(links.length);
+    it('checking a tag props', () => {
+      const wrapper = shallow(
+        <Header links={links}/>
+      );
 
+      wrapper.find('a').forEach(e => {
+        expect(e.prop('href')).to.equal('#');
+      });
+    });
   });
 });

@@ -43,7 +43,7 @@ export default class PersonalData extends Component {
   }
 
   render() {
-    let profile = <Profile links={this.props.profileLinks} img={this.props.img}/>
+    let profile = <Profile links={this.props.profileLinks} img={this.props.img}/>;
     let content;
     if (this.state.editing) {
       content = (

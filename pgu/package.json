@@ -6,6 +6,7 @@
     "chai": "^3.5.0",
     "enzyme": "^2.8.0",
     "mocha": "^3.2.0",
+    "module": "^1.2.5",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "sinon": "^2.1.0"
@@ -23,7 +24,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "./node_modules/.bin/mocha --compilers js:babel-core/register --require ./src/test/setup.js ./src/test/*.test.js",
+    "test": "./node_modules/.bin/mocha --compilers js:babel-core/register --require ./src/test/mocha-setup.js --require ./src/test/setup.js ./src/test/*.test.js",
     "eject": "react-scripts eject"
   }
 }

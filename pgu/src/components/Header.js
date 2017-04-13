@@ -21,8 +21,8 @@ export default class Header extends Component {
           <img src={el.src} alt="" id={el.id}/>
           {el.text}
         </a>
-      </li>)
-  }
+      </li>);
+  };
 
   render() {
     return (
@@ -31,6 +31,6 @@ export default class Header extends Component {
           {this.createLinks(this.links)}
         </ul>
       </header>
-    )
+    );
   }
 }
