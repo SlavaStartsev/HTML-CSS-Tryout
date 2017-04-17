@@ -25,6 +25,19 @@ describe('../components/PersonalData', () => {
     }
   ];
 
+  it('has children', () => {
+    const wrapper = mount(
+      <PersonalData profileLinks={profileLinks} img={avatar}/>
+    );
+
+    expect(wrapper.name()).to.equal('PersonalData');
+    expect(wrapper.childAt(0).name()).to.equal('div');
+    expect(wrapper.find('.container.personal-data').children()).to.have.lengthOf(2);
+    wrapper.find('#btn_edit').simulate('click');
+    expect(wrapper.find('.container.personal-data').children()).to.have.lengthOf(2);
+    expect(wrapper.find('.data-container')).to.have.lengthOf(4);
+  });
+
   context('renders', () => {
     it('with no errors', () => {
       const wrapper = shallow(
@@ -40,6 +53,7 @@ describe('../components/PersonalData', () => {
       );
 
       expect(wrapper.find('.container').hasClass('personal-data')).to.equal(true);
+      expect(wrapper.find('.fa.fa-pencil-square-o').isEmpty()).to.equal(true);
       // expect(wrapper.find('.edit').find('h3').text()).to.contain('Личные данные');
       // expect(wrapper.find('button')[0]).to.be.ok;
     });
@@ -75,6 +89,15 @@ describe('../components/PersonalData', () => {
       expect(wrapper.find('.info > p').at(5).text()).to.be.ok; //lastname
     });
 
+    it('reacts to button click', () => {
+      let spy = sinon.spy(PersonalData.prototype, 'toggleState');
+      const wrapper = mount(
+        <PersonalData profileLinks={profileLinks} img={avatar}/>
+      );
+      wrapper.find('#btn_edit').simulate('click');
+      expect(spy.calledOnce).to.equal(true);
+    });
+
     it('reacts to input change', () => {
       const wrapper = mount(
         <PersonalData profileLinks={profileLinks} img={avatar}/>
@@ -82,22 +105,14 @@ describe('../components/PersonalData', () => {
 
       wrapper.find('#btn_edit').simulate('click');
 
+      expect(wrapper.state().snils).to.equal(undefined);
       wrapper.find('#snils > input').simulate('change', {target: {value: '123123123'}});
       expect(wrapper.state().snils).to.equal('123123123');
 
+      expect(wrapper.state().registrationIndex).to.equal(undefined);
       wrapper.find('#registration_index > input').simulate('change', {target: {value: '123123123'}});
       expect(wrapper.state().registrationIndex).to.equal('123123'); //takes only 6 numbers
       // expect(wrapper.state().name).to.equal('Вячеслав');
-    });
-
-    it('reacts to button click', () => {
-      let spy = sinon.spy(PersonalData.prototype, 'toggleState');
-      const wrapper = mount(
-        <PersonalData profileLinks={profileLinks} img={avatar}/>
-      );
-      wrapper.find('#btn_edit').simulate('click');
-
-      expect(spy.calledOnce).to.equal(true);
     });
   });
 });
