@@ -25,11 +25,15 @@ describe('../components/Header', () => {
   ];
 
   it('should render with props and no errors', () => {
+    let spy = sinon.spy(Header.prototype, 'createLinks');
     const wrapper = shallow(
       <Header links={links}/>
     );
 
+    expect(spy.calledOnce).to.equal(true);
+    expect(spy.threw()).to.equal(false); // not throws errors. ps threw() -> sinon method
     expect(wrapper).to.have.length(1);
+    // console.log(wrapper.debug());
   });
 
   it('contains header tag', () => {
