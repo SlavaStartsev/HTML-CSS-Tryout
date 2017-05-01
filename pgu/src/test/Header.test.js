@@ -1,6 +1,6 @@
 import React from "react";
 import {expect} from "chai";
-import {shallow} from "enzyme";
+import {mount, shallow} from "enzyme";
 import Header from "../components/Header";
 import sinon from "sinon";
 
@@ -89,7 +89,7 @@ describe('../components/Header', () => {
   context('anchor element', () => {
     it('simulate clicks on anchor ', () => {
       let spy = sinon.spy(Header.prototype, 'clicker');
-      const wrapper = shallow(
+      const wrapper = mount(
         <Header links={links}/>
       );
 

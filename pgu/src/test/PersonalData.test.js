@@ -1,6 +1,6 @@
 import React from "react";
-import { expect } from "chai";
-import { mount, shallow } from "enzyme";
+import {expect} from "chai";
+import {mount, shallow} from "enzyme";
 import PersonalData from "../components/PersonalData";
 import sinon from "sinon";
 import avatar from "../img/default-user.png";
@@ -25,19 +25,6 @@ describe('../components/PersonalData', () => {
     }
   ];
 
-  it('has children', () => {
-    const wrapper = mount(
-      <PersonalData profileLinks={profileLinks} img={avatar}/>
-    );
-
-    expect(wrapper.name()).to.equal('PersonalData');
-    expect(wrapper.childAt(0).name()).to.equal('div');
-    expect(wrapper.find('.container.personal-data').children()).to.have.lengthOf(2);
-    wrapper.find('#btn_edit').simulate('click');
-    expect(wrapper.find('.container.personal-data').children()).to.have.lengthOf(2);
-    expect(wrapper.find('.data-container')).to.have.lengthOf(4);
-  });
-
   context('renders', () => {
     it('with no errors', () => {
       let spy = sinon.spy(PersonalData.prototype, 'render');
@@ -51,6 +38,19 @@ describe('../components/PersonalData', () => {
       expect(wrapper.find('ShowData').exists()).to.equal(true);
       console.log(wrapper.debug());
     });
+
+  it('has children', () => {
+    const wrapper = mount(
+      <PersonalData profileLinks={profileLinks} img={avatar}/>
+    );
+
+    expect(wrapper.name()).to.equal('PersonalData');
+    expect(wrapper.childAt(0).name()).to.equal('div');
+    expect(wrapper.find('.container.personal-data').children()).to.have.lengthOf(2);
+    wrapper.find('#btn_edit').simulate('click');
+    expect(wrapper.find('.container.personal-data').children()).to.have.lengthOf(2);
+    expect(wrapper.find('.data-container')).to.have.lengthOf(4);
+  });
 
     it('with proper class', () => {
       const wrapper = mount(
@@ -127,8 +127,13 @@ describe('../components/PersonalData', () => {
 
       wrapper.find('#btn_edit').simulate('click');
       expect(wrapper.state().gender).to.equal(undefined);
+
       wrapper.find('#gender').children().first().simulate('change', {target: {value: 'Мужской'}});
       expect(wrapper.state().gender).to.equal('Мужской');
+
+      wrapper.find('#date_of_birth').children().first().simulate('change', {target: {value: 'Мужской'}});
+      expect(wrapper.find('select').props().value).to.equal('Мужской');
+      expect(wrapper.state().dateOfBirth).to.equal('Мужской');
     });
   });
 });

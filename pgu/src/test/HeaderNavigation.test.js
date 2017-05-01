@@ -1,8 +1,8 @@
 import * as React from "react";
 import {expect} from "chai";
-let assert = require('assert');
 import {Simulate, isElementOfType, renderIntoDocument} from "react-addons-test-utils";
 import {HeaderNavigation} from "../components/HeaderNavigation";
+let assert = require('assert');
 
 
 describe('../components/HeaderNavigation', () => {

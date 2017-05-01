@@ -24,4 +24,4 @@ export const Footer = (props) =>
     <div className="container" id="bottom">
       <p>{props.links.copyright}</p>
     </div>
-  </div>
+  </div>;
