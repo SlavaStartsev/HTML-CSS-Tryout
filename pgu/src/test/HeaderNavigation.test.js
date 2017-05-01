@@ -1,9 +1,7 @@
-import * as React from "react";
+import React from "react";
 import {expect} from "chai";
-import {Simulate, isElementOfType, renderIntoDocument} from "react-addons-test-utils";
+import {shallow} from "enzyme";
 import {HeaderNavigation} from "../components/HeaderNavigation";
-let assert = require('assert');
-
 
 describe('../components/HeaderNavigation', () => {
   let headerNavigationLinks = {
@@ -11,16 +9,29 @@ describe('../components/HeaderNavigation', () => {
     logo: "",
     text: ["Госуслуги", "Республики Коми"]
   };
-
-  it('should render', () => {
-    const headerNavigation = renderIntoDocument(
+  let wrapper;
+  beforeEach(() => {
+    wrapper = shallow(
       <HeaderNavigation links={headerNavigationLinks}/>
     );
-
-    expect(headerNavigation).toExist;
+  });
+  it('renders', () => {
+    expect(wrapper.name()).to.equal('nav');
+    expect(wrapper).to.be.ok;
   });
 
-  it('HeaderNavigation instance is created properly', () => {
-    assert.equal(isElementOfType(<HeaderNavigation />, HeaderNavigation), true);
+  it('has children', () => {
+    expect(wrapper.children()).to.have.lengthOf(2);
+    //or
+    // expect(wrapper.children().length).to.equal(2);
+  });
+
+  it('has links', () => {
+    expect(wrapper.find('ul > li').first().text()).to.contain(headerNavigationLinks.text[0]);
+    expect(wrapper.find('ul > li').first().text()).to.contain(headerNavigationLinks.text[1]);
+    expect(wrapper.find('ul > li')).to.have.lengthOf(headerNavigationLinks.a.length + 1);
+    wrapper.find('ul > li > a').forEach((e, i) => {
+      expect(e.text()).to.equal(headerNavigationLinks.a[i])
+    });
   });
 });
