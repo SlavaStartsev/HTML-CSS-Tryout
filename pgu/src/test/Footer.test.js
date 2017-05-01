@@ -56,6 +56,12 @@ describe('../components/Footer', () => {
 
   });
 
+  it('some more small tests', () => {
+    expect(wrapper.find('#bottom').text()).to.contain(footerLinks.copyright);
+    expect(wrapper.find('#top > #contacts').text()).to.contain(footerLinks.phoneNumber);
+    expect(wrapper.find('#top > #contacts').text()).to.contain(footerLinks.details);
+  });
+
   // context('', () => {
   //
   // });
