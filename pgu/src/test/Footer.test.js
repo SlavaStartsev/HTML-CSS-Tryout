@@ -26,7 +26,6 @@ describe('../components/Footer', () => {
 
   it('renders', () => {
     expect(wrapper).to.have.lengthOf(1);
-    console.log(wrapper.debug());
   });
 
   it('has children', () => {
@@ -34,8 +33,29 @@ describe('../components/Footer', () => {
   });
 
   it('has links from props created right', () => {
+    wrapper.find('#middle > ul').children().map(e => e.find('a')).forEach((e, i) => {
+      expect(e.props().href).to.equal('#');
+      expect(e.hasClass('nav-item')).to.equal(true); //same as below
+      expect(e.props().className).to.equal('nav-item');
+      expect(e.text()).to.contain(footerLinks.a[i]);
+    });
     expect(wrapper.find('#middle > ul').children()).to.have.lengthOf(footerLinks.a.length);
   });
+
+  it('has images', () => {
+    wrapper.find('#gos_uslugi').children().forEach(e => {
+      expect(e.name()).to.equal('img')
+    });
+    expect(wrapper.find('#gos_uslugi').children().first().props().src).to.be.defined;
+    expect(wrapper.find('#gos_uslugi').childAt(1).props().src).to.be.defined;
+
+    //or
+    // wrapper.find('#gos_uslugi').children().forEach(e => {
+    //   expect(e.props().src).to.be.defined;
+    // });
+
+  });
+
   // context('', () => {
   //
   // });
